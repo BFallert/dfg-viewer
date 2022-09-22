@@ -1,8 +1,8 @@
 {
-  "name": "slub/dfgviewer",
+  "name": "bfallert/dfgviewer",
   "type": "typo3-cms-extension",
   "description": "Remote resources navigator for digital libraries. Reads METS/MODS and METS/TEI via OAI-PMH.",
-  "homepage": "https://github.com/slub/dfg-viewer",
+  "homepage": "https://github.com/bfallert/dfg-viewer",
   "keywords": [
     "TYPO3",
     "extension",
