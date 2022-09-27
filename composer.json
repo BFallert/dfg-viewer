@@ -20,7 +20,7 @@
       "ubma-digitalcollections": {
                "type": "git",
         "url": "git@github.com:ub-mannheim/ubma_digitalcollections.git"
-      },
+      }
   },
   "authors": [
     {
