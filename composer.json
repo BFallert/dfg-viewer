@@ -19,6 +19,10 @@
       },
       {
           "type": "git",
+          "url": "git@github.com:ub-mannheim/kitodo-presentation.git"
+      },
+      {
+          "type": "git",
           "url": "git@github.com:ub-mannheim/ubma_digitalcollections.git"
       }
   ],
@@ -52,8 +56,8 @@
   "license": "GPL-3.0-or-later",
   "require": {
     "typo3/cms-core": "~9.5.31|^10.4",
-    "csidirop/presentation": "3.3.x-ocr-test-dev",
-    "ub-mannheim/ubma-digitalcollections": "master-dev"
+    "ub-mannheim/presentation": "3.3.x-ocr-test-dev",
+    "ub-mannheim/ubma-digitalcollections": "^2.1"
   },
   "autoload": {
     "psr-4": {
