@@ -39,7 +39,7 @@
   "require": {
     "typo3/cms-core": "~9.5.31|^10.4",
     "csidirop/presentation": "3.3.x-ocr-test-dev",
-    "bfallert/ubma-digitalcollections": "dev-branchtest"
+    "bfallert/ubma-digitalcollections": "dev-master"
   },
   "autoload": {
     "psr-4": {
