@@ -8,6 +8,12 @@
     "extension",
     "dfgviewer"
   ],
+  "repositories": [
+    {
+       "type": "git",
+       "url": "https://github.com/UB-Mannheim/ubma_digitalcollections.git"
+    }
+  ],
   "authors": [
     {
       "name": "Sebastian Meyer",
