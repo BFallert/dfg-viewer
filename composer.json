@@ -17,9 +17,9 @@
           "type": "git",
           "url": "git@github.com:csidirop/kitodo-presentation.git"
       },
-      "ubma-digitalcollections": {
+      "ub-mannheim/ubma-digitalcollections": {
                "type": "git",
-        "url": "git@github.com:ub-mannheim/ubma_digitalcollections.git"
+        "url": "git@github.com:UB-Mannheim/ubma_digitalcollections.git"
       }
   },
   "authors": [
