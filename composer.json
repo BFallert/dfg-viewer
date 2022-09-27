@@ -8,12 +8,20 @@
     "extension",
     "dfgviewer"
   ],
-  "repositories": [
-    {
-       "type": "git",
-       "url": "https://github.com/UB-Mannheim/ubma_digitalcollections.git"
-    }
-  ],
+  "repositories": {
+      "dfg-viewer": {
+          "type": "git",
+          "url": "git@github.com:BFallert/dfg-viewer.git"
+      },
+      "presentation": {
+          "type": "git",
+          "url": "git@github.com:csidirop/kitodo-presentation.git"
+      },
+      "ubma-digitalcollections": {
+               "type": "git",
+        "url": "git@github.com:ub-mannheim/ubma_digitalcollections.git"
+      },
+  },
   "authors": [
     {
       "name": "Sebastian Meyer",
