@@ -15,6 +15,13 @@ config {
     # cat=plugin.tx_dfgviewer/links/050; type=int+; label=Kitodo Page View
     kitodoPageView =
 
+    # cat=plugin.tx_dfgviewer/links/060; type=int+; label=Kitodo List View
+    kitodoListView =
+
+    # cat=plugin.tx_dfgviewer/links/070; type=int+; label=Kitodo Search Page
+    kitodoSearchPage =
+
+
     # cat=plugin.tx_dfgviewer/string/051; type=string; label=User-Agent string for HTTP requests
     useragent = DFG-Viewer, https://dfg-viewer.de
 

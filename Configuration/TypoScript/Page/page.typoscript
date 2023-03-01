@@ -38,6 +38,12 @@ page {
       kitodoPageView = TEXT
       kitodoPageView.value = {$config.kitodoPageView}
 
+      kitodoListView = TEXT
+      kitodoListView.value = {$config.kitodoListView}
+
+      kitodoSearchPage = TEXT
+      kitodoSearchPage.value = {$config.kitodoSearchPage}
+
       piwik_hostname = TEXT
       piwik_hostname.value = {$config.piwik_hostname}
 
@@ -86,4 +92,15 @@ page {
     }
   }
 }
+[END]
+
+# -------------------------------
+# Page Classes
+# -------------------------------
+[getTSFE().id == {$config.kitodoListView}]
+    page.bodyTag = <body class="website listview">
+[END]
+
+[getTSFE().id == {$config.kitodoSearchPage}]
+    page.bodyTag = <body class="website search">
 [END]
