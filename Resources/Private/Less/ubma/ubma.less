@@ -5,10 +5,23 @@
         h1{
             a {
                 // Logo des df-viewers:
-                background: url(../../../typo3conf/ext/dfgviewer/Resources/Public/Images/dfgviewerLogo.svg) no-repeat center center;            
+		background: url(../../../Resources/Public/Images/header/UB_d_w.svg) no-repeat 0 0;
+		background-size: 62px;
             }
         }
     }
+}
+
+.document-view {
+	.document-functions {
+		.provider {
+			display: none;
+		}
+		
+		ul.document-function-bar {
+			left: 15px;
+		}
+	}
 }
 
 body {
@@ -18,7 +31,17 @@ body {
 				.provider {
 					// fix position of logo
 					.transform(translateY(-10%));
+					
+					// Original state
+					display: flex;
+					
 				}
+				
+				ul.document-function-bar {
+					// Original state
+					left: 124px;
+				}
+				
 			}
 		}
 	}
