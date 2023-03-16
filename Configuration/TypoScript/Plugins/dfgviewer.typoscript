@@ -8,10 +8,12 @@ plugin.tx_dfgviewer {
     }
 	view {
 		partialRootPaths {
-			10 = EXT:dfgviewer/Resources/Private/Plugins/Dfgviewer/Partials
+			10 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Partials
+            20 = EXT:dfgviewer/Resources/Private/Plugins/Dfgviewer/Partials
 		}
 		templateRootPaths {
-			10 = EXT:dfgviewer/Resources/Private/Plugins/Dfgviewer/Templates
+			10 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Templates
+            20 = EXT:dfgviewer/Resources/Private/Plugins/Dfgviewer/Templates
 		}
 	}
 }

@@ -6,13 +6,13 @@ page {
   bodyTag = <body class="website">
 
   adminPanelStyles = 0
-  shortcutIcon = EXT:dfgviewer/Resources/Public/Images/dfgviewerFavicon.png
+  shortcutIcon = EXT:dfgviewer-ma/Resources/Public/Images/dfgviewerFavicon.png
 
   10 = FLUIDTEMPLATE
   10 {
-    file = EXT:dfgviewer/Resources/Private/Templates/Main.html
-    layoutRootPath = EXT:dfgviewer/Resources/Private/Layouts/
-    partialRootPath = EXT:dfgviewer/Resources/Private/Partials/
+    file = EXT:dfgviewer-ma/Resources/Private/Templates/Main.html
+    layoutRootPath = EXT:dfgviewer-ma/Resources/Private/Layouts/
+    partialRootPath = EXT:dfgviewer-ma/Resources/Private/Partials/
 
     settings {
         # show provider logo in Kitodo pageview
@@ -68,7 +68,7 @@ page.bodyTag = <body class="website home">
 page {
   bodyTag = <body class="dfgviewer">
   10 {
-    file = EXT:dfgviewer/Resources/Private/Templates/Kitodo.html
+    file = EXT:dfgviewer-ma/Resources/Private/Templates/Kitodo.html
 
     variables {
       gp-page = TEXT

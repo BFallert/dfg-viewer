@@ -2,6 +2,6 @@
 defined('TYPO3_MODE') or die();
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile (
-'dfgviewer',
+'dfgviewer-ma',
 'Configuration/TsConfig/Page.tsconfig',
-'EXT:dfgviewer: Page TS');
+'EXT:dfgviewer-ma: Page TS');
