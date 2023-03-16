@@ -24,33 +24,33 @@ defined('TYPO3_MODE') or die();
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+// use \TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 // Register plugins.
 // ExtensionManagementUtility::addPItoST43('dfgviewer', 'Classes/Plugins/Sru/Sru.php', '_sru', 'list_type', TRUE);
 
 // Register eID handlers.
-$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['tx_dfgviewer_sru_eid'] = \Slub\Dfgviewer\Eid\SruEid::class . '::main';
+//$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['tx_dfgviewer_sru_eid'] = \Slub\Dfgviewer\Eid\SruEid::class . '::main';
 
 // Register Extbase plugins
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'Slub.Dfgviewer',
-    'Uri',
-    [
-        Uri::class => 'main'
-    ],
-    // non-cacheable actions
-    [
-    ]
-);
+//\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+//    'Slub.Dfgviewer',
+//    'Uri',
+//    [
+//        Uri::class => 'main'
+//    ],
+//    // non-cacheable actions
+//    [
+//    ]
+//);
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'Slub.Dfgviewer',
-    'Sru',
-    [
-        Sru::class => 'main'
-    ],
-    // non-cacheable actions
-    [
-    ]
-);
+//\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+//    'Slub.Dfgviewer',
+//    'Sru',
+//    [
+//        Sru::class => 'main'
+//    ],
+//    // non-cacheable actions
+//    [
+//    ]
+//);
