@@ -3,7 +3,9 @@
 plugin.tx_news {
     view {
         templateRootPaths.110=EXT:dfgviewer/Resources/Private/Plugins/News/Faq/Templates/
+        templateRootPaths.120=EXT:dfgviewer-ma/Resources/Private/Plugins/News/Faq/Templates/
         partialRootPaths.110=EXT:dfgviewer/Resources/Private/Plugins/News/Faq/Partials/
+        partialRootPaths.120=EXT:dfgviewer-ma/Resources/Private/Plugins/News/Faq/Partials/
     }
     features {
         skipDefaultArguments = 0
