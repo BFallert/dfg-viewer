@@ -155,7 +155,7 @@ lib.kitodo.navigation.viewfunction {
 plugin.tx_dlf_toolbox < tt_content.list.20.dlf_toolbox
 plugin.tx_dlf_toolbox {
     settings {
-#        fileGrpsImageDownload = MIN,DEFAULT,MAX
+        fileGrpsImageDownload = MAX,DEFAULT,MIN
     }
 }
 
@@ -178,9 +178,18 @@ plugin.tx_dlf_imagemanipulationtool {
 plugin.tx_dlf_pdfdownloadtool < plugin.tx_dlf_toolbox
 plugin.tx_dlf_pdfdownloadtool {
     settings {
-        tools = pdfdownloadtool
+        tools = pdfdownloadtool, imagedownloadtool
     }
 }
+
+#plugin.tx_dlf_imagedownloadtool < plugin.tx_dlf_toolbox
+#plugin.tx_dlf_imagedownloadtool {
+#    settings {
+#        tools = imagedownloadtool
+#    }
+#}
+
+
 
 # --------------------------------------------------------------------------------------------------------------------
 # Audio player
