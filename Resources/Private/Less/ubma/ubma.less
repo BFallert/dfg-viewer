@@ -17,11 +17,27 @@
 		.provider {
 			display: none;
 		}
-		
+
 		ul.document-function-bar {
 			left: 15px;
 		}
 	}
+    .fulltext-container {
+        opacity: 0.95;
+
+        &:before {
+            height: 85px;
+        }
+
+        .tx-dlf-fulltextselection {
+            padding-top: 80;
+
+            span.textline {
+                // Shows lines in original wrap
+                display: block;
+            }
+        }
+    }
 }
 
 body {
@@ -31,17 +47,17 @@ body {
 				.provider {
 					// fix position of logo
 					.transform(translateY(-10%));
-					
+
 					// Original state
 					display: flex;
-					
+
 				}
-				
+
 				ul.document-function-bar {
 					// Original state
 					left: 124px;
 				}
-				
+
 			}
 		}
 	}
