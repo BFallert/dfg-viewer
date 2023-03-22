@@ -17,11 +17,19 @@
 		.provider {
 			display: none;
 		}
-		
+
 		ul.document-function-bar {
 			left: 15px;
 		}
 	}
+    .fulltext-container {
+        .tx-dlf-fulltextselection {
+            span.textline {
+                // shows text in original lines
+                display: block;
+            }
+        }
+    }
 }
 
 body {
@@ -31,17 +39,17 @@ body {
 				.provider {
 					// fix position of logo
 					.transform(translateY(-10%));
-					
+
 					// Original state
 					display: flex;
-					
+
 				}
-				
+
 				ul.document-function-bar {
 					// Original state
 					left: 124px;
 				}
-				
+
 			}
 		}
 	}
