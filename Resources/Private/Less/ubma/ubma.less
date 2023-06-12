@@ -106,4 +106,57 @@ dd.tx-dlf-metadata-mets.meta_not_show.btn {
 		
 	}
 }
-			
+
+// Blättern-Buttons Hintergrundfarbe ergänzt um es vom Text unterscheiden zu können
+// span ist noch immer schlecht zu erkennen, aber besser wie vorher
+.page-control {
+	&>div.backs.over,
+	&>div.fwds.over {
+		span.fwd,
+		span.last,
+		span.next,
+		span.rwnd,
+		span.first,
+		span.prev {
+			span,
+			a {
+				background-color: #fff;
+				width: 250%;
+			}
+		}
+	}
+	&>div.fwds.over {
+		span.fwd,
+		span.last,
+		span.next {
+			span,
+			a {
+				padding-left: 10px;
+			}
+		}
+	}
+	&>div.backs.over {
+		span.rwnd,
+		span.first,
+		span.prev {
+			span,
+			a {
+				padding-right: 10px;
+			}
+		}
+	}
+
+	&>div.backs.over,
+	&>div.fwds.over {
+		span.fwd,
+		span.last,
+		span.next,
+		span.rwnd,
+		span.first,
+		span.prev {
+			a {
+				opacity: 0.88;
+			}
+		}
+	}
+}
