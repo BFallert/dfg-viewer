@@ -212,7 +212,11 @@ ul.toc.newspaper {
 								ul.doNotLinkIt {
 									li.submenu {
 										// Das ist dann der Tag
-										left: 30px;
+										left: 0;
+
+										&::before {
+											left: 30px;
+										}
 
 										a {
 											padding-left: 50px;
