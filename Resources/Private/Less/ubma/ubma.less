@@ -179,11 +179,20 @@ dd.tx-dlf-metadata-mets.meta_not_show.btn {
 ul.toc.newspaper {
 	ul.normal {
 		li {
-			&.submenu.doNotLinkIt {
-				color: blue;
+			&.submenu {
+				ul.normal {
+					&:before {
+						color: lightblue;
+					}
+					li.submenu.doNotLinkIt {
+						color: lightgreen;
+					}
+
+				}
 			}
 		}
 
+		/*
 		ul.normal {
 			ul.doNotLinkIt {
 				&:before {
@@ -197,6 +206,7 @@ ul.toc.newspaper {
 				}
 			}
 		}
+		*/
 	}
 }
 
