@@ -21,13 +21,28 @@
             <li class="current">
         </f:case>
         <f:case value="ACTIFSUB">
-            <li class="active submenu">
+		<f:if condition="{child.doNotLinkIt}">
+			<f:then>
+				<li class="active submenu doNotLinkIt">
+			</f:then>
+			<f:else>
+				<li class="active submenu">
+			</f:else>
+		</f:if>
+	    
         </f:case>
         <f:case value="CURIFSUB">
             <li class="current submenu">
         </f:case>
         <f:case value="IFSUB">
-            <li class="submenu">
+		<f:if condition="{child.doNotLinkIt}">
+			<f:then>
+				<li class="submenu doNotLinkIt">
+			</f:then>
+			<f:else>
+				<li class="submenu">
+			</f:else>
+		</f:if>
         </f:case>
         <f:defaultCase>
             <li>
@@ -36,20 +51,40 @@
 
     <f:if condition="{child.doNotLinkIt}">
         <f:then>
-            <span class="a">
+	
+            <span class="a doNotLinkIt">
+                <f:comment><f:debug>{_all}</f:debug></f:comment>
                 <f:render partial="TableOfContents/Title" arguments="{child: child}"/>
             </span>
+	
         </f:then>
         <f:else>
-            <f:link.action
-                action="main"
-                pageUid="{settings.targetPid}"
+            <f:comment>hier steckt der Fehler bei zeitungen issues
                 additionalParams="{f:if(condition:'{child.id}', then:'{\'tx_dlf[id]\':child.id, \'tx_dlf[page]\':child.page}', else: '{\'tx_dlf[page]\':child.page}')}"
-                addQueryString="1"
-                addQueryStringMethod="GET"
-                title="{f:if(condition:'{child.title}', then: '{child.title}', else: '{child.type}')}">
-                    <f:render partial="TableOfContents/Title" arguments="{child: child}"/>
-            </f:link.action>
+                wenn dieser Teil weggelassen wird funktioniert scheinbar alles
+            </f:comment>
+            <f:if condition="{child.ITEM_STATE} == 'ACTIFSUB' && ({child.type} == 'Zeitung' || {child.type} == 'Newspaper') ">
+                <f:then>
+                    <f:comment><f:debug>{_all}</f:debug></f:comment>
+                    <f:comment><f:debug>Diese Bedingung trifft zu auf Issues bei Zeitungen</f:debug></f:comment>
+                    <f:comment>
+                        Wir das untere Statement bei der Ausgaben-Ebene von Zeitungen eingebunden wird ein oops-Error geschmissen
+                        Ursache koennte ev. ein Problem mit der child.id sein, diese ist bei meinem ersten Testfall eine URL und nicht eine Zahle
+                        aktuell kann ich aber keine Pruefung auf Zahlen durchfuehren
+                    </f:comment>
+                </f:then>
+                <f:else>
+                    <f:link.action
+                        action="main"
+                        pageUid="{settings.targetPid}"
+                        additionalParams="{f:if(condition:'{child.id}', then:'{\'tx_dlf[id]\':child.id, \'tx_dlf[page]\':child.page}', else: '{\'tx_dlf[page]\':child.page}')}"
+                        addQueryString="1"
+                        addQueryStringMethod="GET"
+                        title="{f:if(condition:'{child.title}', then: '{child.title}', else: '{child.type}')}">
+                            <f:render partial="TableOfContents/Title" arguments="{child: child}"/>
+                    </f:link.action>
+                </f:else>            
+            </f:if>
         </f:else>
     </f:if>
 
@@ -67,7 +102,15 @@
     </f:if>
 
     <f:if condition="{child._SUB_MENU} && ({child.ITEM_STATE} == 'IFSUB' || {child.ITEM_STATE} == 'ACTIFSUB' || {child.ITEM_STATE} == 'CURIFSUB')">
-        <ul>
+	<f:comment><f:debug>{_all}</f:debug></f:comment>
+	<f:if condition="{child.doNotLinkIt}">
+		<f:then>
+			<ul class="doNotLinkIt">
+		</f:then>
+		<f:else>
+			<ul class="normal">
+		</f:else>
+	</f:if>
             <f:render partial="TableOfContents/Children" arguments="{children: child._SUB_MENU}"/>
         </ul>
     </f:if>
