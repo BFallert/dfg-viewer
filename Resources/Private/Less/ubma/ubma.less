@@ -177,13 +177,15 @@ dd.tx-dlf-metadata-mets.meta_not_show.btn {
 
 /* toc im dfgviewer modus */
 ul.toc.newspaper {
-	li.active.submenu {
-		ul.normal {
-			li.submenu.current {
+	& > li.active.submenu {
+		& > ul.normal {
+			& > li.submenu.current {
 				color: hotpink;
+				color: #ff69b4;
 
 				&:before {
 					color: lightpink;
+					color: #ffb6c1;
 				}
 			}
 		}
