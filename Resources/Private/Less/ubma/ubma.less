@@ -207,6 +207,7 @@ ul.toc.newspaper {
 							&:before {
 								// Verbindungsstrich vor 02.02.1914
 								left: 30px;
+								top:19px
 							}
 
 							li.submenu.doNotLinkIt {
@@ -216,7 +217,13 @@ ul.toc.newspaper {
 										left: 0;
 
 										&::before {
+											// auch Unterelemente, damit wird bei einem unterelement der Pfeil weiter rechts gerückt
 											left: 30px;
+										}
+										
+										// das erste Elemente also der Tag selbst
+										&.active {
+											left: 28px;
 										}
 
 										a {
