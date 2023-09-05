@@ -177,6 +177,18 @@ dd.tx-dlf-metadata-mets.meta_not_show.btn {
 
 /* toc im dfgviewer modus */
 ul.toc.newspaper {
+	li.active.submenu {
+		ul.normal {
+			li.submenu.current {
+				color: hotpink;
+
+				&:before {
+					color: lightpink;
+				}
+			}
+		}
+	}
+
 	ul.normal {
 		li {
 			&.submenu {
@@ -219,6 +231,7 @@ ul.toc.newspaper {
 										&::before {
 											// auch Unterelemente, damit wird bei einem unterelement der Pfeil weiter rechts gerueckt
 											left: 30px;
+											color: brown;
 										}
 										
 										// das erste Elemente also der Tag selbst
