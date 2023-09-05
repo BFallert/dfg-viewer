@@ -120,7 +120,7 @@ dd.tx-dlf-metadata-mets.meta_not_show.btn {
 	}
 }
 
-// Blättern-Buttons Hintergrundfarbe ergänzt um es vom Text unterscheiden zu können
+// Blï¿½ttern-Buttons Hintergrundfarbe ergï¿½nzt um es vom Text unterscheiden zu kï¿½nnen
 // span ist noch immer schlecht zu erkennen, aber besser wie vorher
 .page-control {
 	&>div.backs.over,
@@ -176,12 +176,24 @@ dd.tx-dlf-metadata-mets.meta_not_show.btn {
 }
 
 /* toc im dfgviewer modus */
-ul.toc {
+ul.toc.newspaper {
 	ul.normal {
+		li {
+			&.submenu.doNotLinkIt {
+				color: blue;
+			}
+		}
+
 		ul.normal {
 			ul.doNotLinkIt {
 				&:before {
 					color: hotpink;
+				}
+
+				ul.doNotLinkIt {
+					&:before {
+						color: green;
+					}
 				}
 			}
 		}
