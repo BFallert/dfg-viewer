@@ -217,7 +217,7 @@ ul.toc.newspaper {
 										left: 0;
 
 										&::before {
-											// auch Unterelemente, damit wird bei einem unterelement der Pfeil weiter rechts gerückt
+											// auch Unterelemente, damit wird bei einem unterelement der Pfeil weiter rechts gerueckt
 											left: 30px;
 										}
 										
@@ -233,7 +233,18 @@ ul.toc.newspaper {
 
 										&.current {
 											ul.normal {
-												// Unterunterelemente einrücken
+												// Unterunterelemente einruecken
+												padding-left: 8px;
+
+												&:before {
+													width: 1px;
+													color: #fff;
+												}
+											}
+										}
+										&.active {
+											ul.normal {
+												// Unterunterelemente einruecken
 												padding-left: 8px;
 
 												&:before {
