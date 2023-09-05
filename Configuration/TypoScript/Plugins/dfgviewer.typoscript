@@ -6,16 +6,37 @@ plugin.tx_dfgviewer {
     persistence {
         storagePid = {$config.storagePid}
     }
-	view {
-		partialRootPaths {
-			10 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Partials
-            20 = EXT:dfgviewer/Resources/Private/Plugins/Dfgviewer/Partials
-		}
-		templateRootPaths {
-			10 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Templates
-            20 = EXT:dfgviewer/Resources/Private/Plugins/Dfgviewer/Templates
-		}
-	}
+    view {
+        partialRootPaths {
+            10 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Partials
+            70 = EXT:dfgviewer/Resources/Private/Plugins/Dfgviewer/Partials
+        }
+        templateRootPaths {
+            10 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Templates
+            70 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Templates/ViewHelpers/Widget/Paginate
+        }
+        widget {
+            TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
+                templateRootPath {
+                    9 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Templates/
+                }
+            }
+        }
+    }
+}
+
+
+plugin.tx_ext {
+    view {
+        widget {
+            TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelpers {
+                templateRootPath {
+                    8 = EXT:dfgviewer-ma/Resources/Private/Plugins/Dfgviewer/Templates/
+                    9 = {$plugin.tx_ext.view.templateRootPath}
+                }
+            }
+        }
+    }
 }
 
 plugin.tx_dfgviewer_uri < tt_content.list.20.dfgviewer_uri
