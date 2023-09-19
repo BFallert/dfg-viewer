@@ -33,6 +33,31 @@
             }
         }
     }
+    
+
+    // hide some icons in calender view
+    & ~ .view-functions {
+        ul {
+            li.zoom a.in,
+            li.zoom a.out,
+            li.rotate,
+            li.pages {
+                display: none;
+            }
+        }
+    }
+    & + .document-functions {
+        ul.document-function-bar {
+            li.submenu.downloads,
+            li.doublepage,
+            li.grid {
+                display: none;
+            }
+        }
+    }
+    // End: hide some icons in calender view
+    
+    
     @media screen and (min-width: @tabletLandscapeViewportWidth) {
         padding: 140px;
         vertical-align: middle;
@@ -145,6 +170,8 @@
                         }
                         ul.issues {
                             opacity: 1;
+                            // In the calendar view, with an open day, display date above the underlying text completely.
+                            z-index: 100;
                             .transform(scaleY(1));
                             li {
                                 margin: 10px 0;
@@ -158,6 +185,28 @@
             }
         }
     }
+    // hide some icons in calender view
+    & ~ .view-functions {
+        ul {
+            li.zoom a.in,
+            li.zoom a.out,
+            li.rotate,
+            li.pages {
+                display: none;
+            }
+        }
+    }
+    & + .document-functions {
+        ul.document-function-bar {
+            li.submenu.downloads,
+            li.doublepage,
+            li.grid {
+                display: none;
+            }
+        }
+    }
+    // End: hide some icons in calender view
+    
     @media screen and (min-width: @tabletLandscapeViewportWidth) {
         position: relative;
         height: 100%;
@@ -232,7 +281,10 @@
                 padding: 30px;
                 width: 50%;
                 float: left;
-                overflow: hidden;
+                // does not display the link box for day in last line of a month completely
+                //overflow: hidden;
+                // displays the link box for the day in the last line of a month completely
+                overflow: inherit;
                 table {
                     width: 100%;
                     margin: 0;
