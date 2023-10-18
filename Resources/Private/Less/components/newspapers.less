@@ -30,6 +30,31 @@
             }
         }
     }
+    
+
+    // hide some icons in calender view
+    & ~ .view-functions {
+        ul {
+            li.zoom a.in,
+            li.zoom a.out,
+            li.rotate,
+            li.pages {
+                display: none;
+            }
+        }
+    }
+    & + .document-functions {
+        ul.document-function-bar {
+            li.submenu.downloads,
+            li.doublepage,
+            li.grid {
+                display: none;
+            }
+        }
+    }
+    // End: hide some icons in calender view
+    
+    
     @media screen and (min-width: @tabletLandscapeViewportWidth) {
         padding: 140px;
         vertical-align: middle;
@@ -157,6 +182,28 @@
             }
         }
     }
+    // hide some icons in calender view
+    & ~ .view-functions {
+        ul {
+            li.zoom a.in,
+            li.zoom a.out,
+            li.rotate,
+            li.pages {
+                display: none;
+            }
+        }
+    }
+    & + .document-functions {
+        ul.document-function-bar {
+            li.submenu.downloads,
+            li.doublepage,
+            li.grid {
+                display: none;
+            }
+        }
+    }
+    // End: hide some icons in calender view
+    
     @media screen and (min-width: @tabletLandscapeViewportWidth) {
         position: relative;
         height: 100%;
