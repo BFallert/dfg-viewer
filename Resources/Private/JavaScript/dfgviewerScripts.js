@@ -20,11 +20,20 @@ $(document).ready(function() {
 
     // menu toggles for offcanvas toc and metadata
     $('.offcanvas-toggle').on(mobileEvent, function(event) {
+        // close nav on link or download if opend
+        close_all_submenues();
+
         $(this).parent().toggleClass('open');
     });
 
     // active toggle for submenus
     $('.document-functions li.submenu > a').on(mobileEvent, function(event) {
+        // close nav on link or download if opend
+        close_all_submenues('in-secondary-nav');
+
+        // close secondary nav if click on link or download
+        $('nav .secondary-nav').removeClass('open');
+
         $('li.submenu.open a').not(this).parent().removeClass('open');
         $(this).parent().toggleClass('open');
         return false;
@@ -34,6 +43,9 @@ $(document).ready(function() {
     $('nav .nav-toggle').on(mobileEvent, function(event) {
         $(this).toggleClass('active');
         $('nav .viewer-nav').toggleClass('open');
+
+        // close subnav when primary nav if open
+        close_all_submenues('in-primary-nav');
     });
 
     // calendar dropdowns
@@ -104,6 +116,7 @@ $(document).ready(function() {
 
     // enable click on fullscreen button
     $('a.fullscreen').on(mobileEvent, function() {
+        close_all_submenues('all');
         if($('body.fullscreen')[0]) {
             exitFullscreen();
         } else {
@@ -164,6 +177,46 @@ $(document).ready(function() {
         $('body').removeClass('static');
     }, 1000);
 
+    // Closing open menus in different situations
+    $('.tx-dlf-tools-imagetools').on('click', function (event) {
+        close_all_submenues('all');
+    });
+    $('.page-control').on('click', function (event) {
+        close_all_submenues('all');
+    });
+    $('.tx-dlf-map').on('click', function (event) {
+        close_all_submenues('all');
+    });
+
+    // In calendar if only one issue for this day: click on date open this day
+
+    $('.issues').each( function() {
+        var nCountIssues = $(this).find("ul").find("li").length;
+        if (nCountIssues > 1) {
+            //$(this).addClass("testgt");
+        } else {
+            var cAnker = $(this).find("ul").find("li").find("a").attr("href");
+            // Open day with click or touch if only one issue for this day
+            $(this).parent().find(".contains-issues").on("click touch", function() { 
+                window.location.href = cAnker;
+            });
+        };
+    });
+
+/*
+    $('.days').each( function() {
+        if ($(this).find('.issues').find('a') > 1) {
+        } else {
+            let $html = $(this).find('a').first().attr("href");
+            console.log($html);
+            //let $h4 = $(this).find('h4').text();
+            let $h4 = $(this).find('.contains-issues').text();
+            //console.log($h4);
+            let $datumadd = '<div class="contains-issues"><a href="' + $html + '">' + $h4 + '</a></div>';
+            //$(this).find('.contains-issues').replaceWith($datumadd);
+        };
+    });
+*/
 });
 
 $(document).keyup(function(e) {
@@ -206,4 +259,18 @@ function hideBrowserAlert(){
     $('#browser-hint').addClass('hidden');
     Cookies.set('tx-dlf-pageview-hidebrowseralert', 'true', { sameSite: 'lax' });
 
+}
+
+function close_all_submenues(environment = '') {
+    // close nav on link or download if opened
+    if (environment !== 'in-secondary-nav') {
+        // Not with in-seondary-nav otherwise menus can no longer be closed
+        $('li.submenu.open a').parent().removeClass('open');
+    };
+    if ((environment === 'in-secondary-nav') || (environment === 'all') ) {
+        // close subnav if opend
+        $('nav .nav-toggle').removeClass('active');
+        $('nav .secondary-nav').removeClass('open');
+        $('nav ul.viewer-nav').removeClass('open');
+    };
 }
