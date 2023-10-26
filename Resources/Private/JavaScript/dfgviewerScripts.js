@@ -177,7 +177,6 @@ $(document).ready(function() {
         $('body').removeClass('static');
     }, 1000);
 
-
     // Closing open menus in different situations
     $('.tx-dlf-tools-imagetools').on('click', function (event) {
         close_all_submenus('all');
@@ -188,7 +187,6 @@ $(document).ready(function() {
     $('.tx-dlf-map').on('click', function (event) {
         close_all_submenus('all');
     });
-
 
 });
 
@@ -236,12 +234,14 @@ function hideBrowserAlert(){
 
 function close_all_submenus(environment = '') {
     // close nav on link or download if opened
-    $('li.submenu.open a').parent().removeClass('open');
+    if (environment !== 'in-secondary-nav') {
+        // Not with in-seondary-nav otherwise menus can no longer be closed
+        $('li.submenu.open a').parent().removeClass('open');
+    };
     if ((environment === 'in-secondary-nav') || (environment === 'all') ) {
         // close subnav if opend
         $('nav .nav-toggle').removeClass('active');
         $('nav .secondary-nav').removeClass('open');
         $('nav ul.viewer-nav').removeClass('open');
     };
-
 }
