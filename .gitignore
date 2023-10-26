@@ -7,3 +7,4 @@ Documentation-GENERATED-temp/
 public/
 vendor/
 composer.lock
+Build/yarn.lock
