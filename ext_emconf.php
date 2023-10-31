@@ -32,7 +32,7 @@ $EM_CONF[$_EXTKEY] = [
     'shy' => '',
     'priority' => '',
     'module' => '',
-    'state' => 'stable',
+    'state' => 'dev',
     'internal' => '',
     'uploadfolder' => false,
     'createDirs' => '',
@@ -43,7 +43,7 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'typo3' => '9.5.0-10.4.99',
-            'dlf' => '3.3.4-',
+            'dlf' => '@dev',
         ],
         'conflicts' => [
         ],
