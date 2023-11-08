@@ -158,10 +158,13 @@ lib.kitodo.navigation.viewfunction {
 # pdfdownloadtool
 # searchindocumenttool
 
+
 plugin.tx_dlf_toolbox < tt_content.list.20.dlf_toolbox
 plugin.tx_dlf_toolbox {
     settings {
-#        fileGrpsImageDownload = MIN,DEFAULT,MAX
+        fileGrpsImageDownload = DEFAULT
+        fileGrpsDownload = DOWNLOAD,FULLTEXT
+        tools = imagedownloadtool, pdfdownloadtool, imagemanipulationtool, fulltexttool
     }
 }
 
@@ -177,7 +180,7 @@ plugin.tx_dlf_fulltexttool < plugin.tx_dlf_toolbox
 plugin.tx_dlf_fulltexttool {
     settings {
         tools = fulltexttool
-        activateFullTextInitially = 0
+        activateFullTextInitially = 1
         fullTextScrollElement = #tx-dlf-fulltextselection
     }
 }
@@ -186,6 +189,14 @@ plugin.tx_dlf_imagemanipulationtool < plugin.tx_dlf_toolbox
 plugin.tx_dlf_imagemanipulationtool {
     settings {
         tools = imagemanipulationtool
+    }
+}
+
+
+plugin.tx_dlf_imagedownloadtool < plugin.tx_dlf_toolbox
+plugin.tx_dlf_imagedownloadtool {
+    settings {
+        tools = imagedownloadtool
     }
 }
 
