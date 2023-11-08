@@ -152,10 +152,13 @@ lib.kitodo.navigation.viewfunction {
 # pdfdownloadtool
 # searchindocumenttool
 
+
 plugin.tx_dlf_toolbox < tt_content.list.20.dlf_toolbox
 plugin.tx_dlf_toolbox {
     settings {
-#        fileGrpsImageDownload = MIN,DEFAULT,MAX
+        fileGrpsImageDownload = DEFAULT
+        fileGrpsDownload = DOWNLOAD,FULLTEXT
+        tools = imagedownloadtool, pdfdownloadtool, imagemanipulationtool, fulltexttool
     }
 }
 
@@ -163,7 +166,7 @@ plugin.tx_dlf_fulltexttool < plugin.tx_dlf_toolbox
 plugin.tx_dlf_fulltexttool {
     settings {
         tools = fulltexttool
-        activateFullTextInitially = 0
+        activateFullTextInitially = 1
         fullTextScrollElement = html, body
     }
 }
@@ -175,12 +178,22 @@ plugin.tx_dlf_imagemanipulationtool {
     }
 }
 
+
+plugin.tx_dlf_imagedownloadtool < plugin.tx_dlf_toolbox
+plugin.tx_dlf_imagedownloadtool {
+    settings {
+        tools = imagedownloadtool
+    }
+}
+
 plugin.tx_dlf_pdfdownloadtool < plugin.tx_dlf_toolbox
 plugin.tx_dlf_pdfdownloadtool {
     settings {
         tools = pdfdownloadtool, imagedownloadtool
     }
 }
+
+
 
 # --------------------------------------------------------------------------------------------------------------------
 # Audio player
@@ -191,6 +204,7 @@ plugin.tx_dlf_audioplayer {
         elementId = tx-dlf-audio
     }
 }
+
 
 
 #=======================================================================
