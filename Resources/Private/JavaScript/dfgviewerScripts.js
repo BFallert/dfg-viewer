@@ -232,7 +232,7 @@ function hideBrowserAlert(){
 
 }
 
-function close_all_submenus(environment = '') {
+function close_all_submenues(environment = '') {
     // close nav on link or download if opened
     if (environment !== 'in-secondary-nav') {
         // Not with in-seondary-nav otherwise menus can no longer be closed
