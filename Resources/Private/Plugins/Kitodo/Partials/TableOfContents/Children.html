@@ -11,7 +11,8 @@
 </f:comment>
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
-      
+
+<f:comment><f:debug>{_all}</f:debug></f:comment>
 <f:for each="{children}" as="child">
     <f:variable name="nIndex" value="{nIndex + 1}" />
     <f:switch expression="{child.ITEM_STATE}">
