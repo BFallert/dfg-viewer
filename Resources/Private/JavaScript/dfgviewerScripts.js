@@ -188,6 +188,20 @@ $(document).ready(function() {
         close_all_submenus('all');
     });
 
+/*
+    $('.days').each( function() {
+        if ($(this).find('.issues').find('a') > 1) {
+        } else {
+            let $html = $(this).find('a').first().attr("href");
+            console.log($html);
+            //let $h4 = $(this).find('h4').text();
+            let $h4 = $(this).find('.contains-issues').text();
+            //console.log($h4);
+            let $datumadd = '<div class="contains-issues"><a href="' + $html + '">' + $h4 + '</a></div>';
+            //$(this).find('.contains-issues').replaceWith($datumadd);
+        };
+    });
+*/
 });
 
 $(document).keyup(function(e) {
