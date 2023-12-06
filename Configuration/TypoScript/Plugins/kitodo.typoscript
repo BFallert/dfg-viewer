@@ -167,7 +167,8 @@ plugin.tx_dlf_fulltexttool {
     settings {
         tools = fulltexttool
         activateFullTextInitially = 0
-        fullTextScrollElement = html, body
+        # this must be changed from "html, body" to "#tx-dlf-fulltextselection" so that automatic scrolling works for fulltext
+        fullTextScrollElement = #tx-dlf-fulltextselection
     }
 }
 
