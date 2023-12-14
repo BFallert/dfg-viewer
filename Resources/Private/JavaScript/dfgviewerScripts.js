@@ -58,6 +58,9 @@ $(document).ready(function() {
     $('.tx-dfgviewer-newspaper-calendar').parents('body').addClass('calendar');
     $('.tx-dfgviewer-newspaper-years').parents('body').addClass('calendar');
 
+    // add body class if any calendar is present
+    $('.tx-dfgviewer-newspaper-years').parents('body').addClass('years-calendar');
+
     // Inject view switch functions for calendar/list view (initial show calendar)
     $('.tx-dfgviewer-newspaper-calendar .calendar-list-selection a.select-calendar-view, .tx-dfgviewer-newspaper-calendar .calendar-view').addClass('active');
     $('.tx-dfgviewer-newspaper-calendar .calendar-list-selection a').on(mobileEvent, function(event) {
@@ -179,13 +182,13 @@ $(document).ready(function() {
 
     // Closing open menus in different situations
     $('.tx-dlf-tools-imagetools').on('click', function (event) {
-        close_all_submenus('all');
+        close_all_submenues('all');
     });
     $('.page-control').on('click', function (event) {
-        close_all_submenus('all');
+        close_all_submenues('all');
     });
     $('.tx-dlf-map').on('click', function (event) {
-        close_all_submenus('all');
+        close_all_submenues('all');
     });
 
 /*
