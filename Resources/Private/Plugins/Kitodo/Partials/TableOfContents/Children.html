@@ -15,45 +15,45 @@
 <f:comment><f:debug>{_all}</f:debug></f:comment>
 <f:for each="{children}" as="child">
     <f:variable name="nIndex" value="{nIndex + 1}" />
+    <!-- {child.type} -->
     <f:switch expression="{child.ITEM_STATE}">
         <f:case value="ACT">
-            <li class="active">
+            <li class="active {child.type}">
         </f:case>
         <f:case value="CUR">
-            <li class="current">
+            <li class="current {child.type}">
         </f:case>
         <f:case value="ACTIFSUB">
             <f:if condition="{child.doNotLinkIt}">
                 <f:then>
-                    <f:comment>hier war ein schließendes li am ende das scheint mir aber unlogisch</f:comment>
-                    <li class="active submenu doNotLinkIt">
+                    <li class="active submenu doNotLinkIt {child.type}">
                 </f:then>
                 <f:else>
-                    <li class="active submenu">
+                    <li class="active submenu {child.type}">
                 </f:else>
             </f:if>
         </f:case>
         <f:case value="CURIFSUB">
-            <li class="current submenu">
+            <li class="current submenu {child.type}">
         </f:case>
         <f:case value="IFSUB">
             <f:if condition="{child.doNotLinkIt}">
                 <f:then>
-                    <li class="submenu doNotLinkIt">
+                    <li class="submenu doNotLinkIt {child.type}">
                 </f:then>
                 <f:else>
-                    <li class="submenu">
+                    <li class="submenu {child.type}">
                 </f:else>
             </f:if>
         </f:case>
         <f:defaultCase>
-            <li class="default">
+            <li class="default {child.type}">
         </f:defaultCase>
     </f:switch>
 
     <f:if condition="{child.doNotLinkIt}">
         <f:then>
-            <span class="a doNotLinkIt">
+            <span class="a doNotLinkIt {child.type}">
                 <f:render partial="TableOfContents/Title" arguments="{child: child}"/>
             </span>
         </f:then>
@@ -100,11 +100,11 @@
     <f:if condition="{child._SUB_MENU} && ({child.ITEM_STATE} == 'IFSUB' || {child.ITEM_STATE} == 'ACTIFSUB' || {child.ITEM_STATE} == 'CURIFSUB')">
         <f:if condition="{child.doNotLinkIt}">
             <f:then>
-                <ul class="doNotLinkIt">
+                <ul class="doNotLinkIt {child.type}">
             </f:then>
             <f:else>
                 <f:comment><f:debug>{_all}</f:debug></f:comment>
-                <ul class="normal">
+                <ul class="normal {child.type}">
             </f:else>
         </f:if>
             <f:render partial="TableOfContents/Children" arguments="{children: child._SUB_MENU}"/>
