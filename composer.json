@@ -44,8 +44,8 @@
     "license": "GPL-3.0-or-later",
     "require": {
         "typo3/cms-core": "^10.4|^11.5",
-        "kitodo/presentation": "@dev",
-        "slub/slub-digitalcollections": "@dev"
+        "bfallert/presentation": "@dev",
+        "bfallert/slub-digitalcollections": "@dev"
     },
     "autoload": {
         "psr-4": {
