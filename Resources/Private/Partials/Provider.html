@@ -6,7 +6,8 @@
     <f:if condition="{settings.showProviderLogo}">
         <ul>
             <f:comment>OwnerLogo</f:comment>
-            <f:alias map="{logoUrl: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:ownerLogo)[1]\')}',
+            <f:comment> f:alias map="{logoUrl: '/typo3conf/ext/uma_site/Resources/Public/Images/header/logo-ub-digi-w-de.svg',</f:comment>
+            <f:alias map="{logoUrl: ''LLL:EXT:uma_site/Resources/Public/Images/header/logo-ub-digi-w-de.svg',
                 logoTitle: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:owner)[1]\')}',
                 logoUri: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:ownerSiteURL)[1]\',
                 htmlspecialchars:\'FALSE\')}  '}">
@@ -23,7 +24,7 @@
                 </f:if>
             </f:alias>
             <f:comment>aggregatorLogo</f:comment>
-            <f:alias map="{logoUrl: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:aggregatorLogo)[1]\')}', 
+            <f:alias map="{logoUrl: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:aggregatorLogo)[1]\')}',
                 logoTitle: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:aggregator)[1]\')}',
                 logoUri: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:aggregatorSiteURL)[1]\',
                 htmlspecialchars:\'FALSE\')}'}">
