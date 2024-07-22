@@ -6,21 +6,19 @@
     <f:if condition="{settings.showProviderLogo}">
         <ul>
             <f:comment>OwnerLogo</f:comment>
-            <f:alias map="{logoUrl: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:ownerLogo)[1]\')}',
-                logoTitle: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:owner)[1]\')}',
-                logoUri: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:ownerSiteURL)[1]\',
-                htmlspecialchars:\'FALSE\')}  '}">
-                <f:if condition="{dc:providerLogoCached(logo:'{logoUrl}')}">
+            <f:alias map="{logoUrl: '/typo3conf/ext/uma_site/Resources/Public/Images/Icons/logo-ub-digi-de.svg',
+					logoTitle: 'UB Mannheim: Digitale Sammlungen'}">
+                <f:comment>f:if condition="{dc:providerLogoCached(logo:'{logoUrl}')}"</f:comment>
                     <li>
-                        <!--Provider.html 15-->
-                        <f:comment> f:link.external uri="{logoUri}" title="{logoTitle}" </f:comment>
-                        <f:link.page pageUid="{rootPageId}" title="UB Mannheim: Digitale Sammlungen" class="dfgviewer-logo">
-                            <img src="/typo3temp/assets/images/{dc:providerLogoCached(logo:'{logoUrl}')}"
+                        <!--Provider.html dfgviewer 15-->
+                        <f:comment> f:link.external uri="" title="{logoTitle}" </f:comment>
+                        <f:link.page pageUid="{rootPageId}" title="{logoTitle}" class="dfgviewer-logo">
+                            <img src="{logoUrl}"
                                 title="{logoTitle}" alt="Logo der {logoTitle}" />
                         </f:link.page>
                         <f:comment> f:link.external </f:comment>
                     </li>
-                </f:if>
+                <f:comment>f:if</f:comment>
             </f:alias>
             <f:comment>aggregatorLogo</f:comment>
             <f:alias map="{logoUrl: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:aggregatorLogo)[1]\')}', 
