@@ -5,14 +5,14 @@
 <div class="provider">
     <f:if condition="{settings.showProviderLogo}">
         <ul>
-            <f:comment>OwnerLogo</f:comment>
+            <f:comment>Backlink to Digitale Sammlungen</f:comment>
             <f:alias map="{ logoUrl: '/typo3conf/ext/uma_site/Resources/Public/Images/Icons/logo-ub-digi-de.svg',
-                            logoTitle: 'UB Mannheim: Digitale Sammlungen'}">
+                            logoTitle: 'Backlink to: UB Mannheim: Digitale Sammlungen'}">
                 <f:comment>f:if condition="{dc:providerLogoCached(logo:'{logoUrl}')}"</f:comment>
-                    <li>
-                        <!--Provider.html dfgviewer 15-->
+                    <li class="backlink_in_fullscreen">
+                        <!--Provider.html dfgviewer 13-->
                         <f:comment> f:link.external uri="" title="{logoTitle}" </f:comment>
-                        <f:link.page pageUid="{rootPageId}" title="{logoTitle}" class="dfgviewer-logo">
+                        <f:link.page pageUid="{rootPageId}" title="Backlink to: {logoTitle}" class="dfgviewer-logo">
                             <img src="{logoUrl}"
                                 title="{logoTitle}" alt="Logo der {logoTitle}" />
                         </f:link.page>
@@ -20,6 +20,22 @@
                     </li>
                 <f:comment>f:if</f:comment>
             </f:alias>
+            <f:comment>OwnerLogo</f:comment>
+            <f:alias map="{logoUrl: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:ownerLogo)[1]\')}',
+                 logoTitle: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:owner)[1]\')}',
+                 logoUri: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:ownerSiteURL)[1]\',
+                 htmlspecialchars:\'FALSE\')}  '}">
+                <f:if condition="{dc:providerLogoCached(logo:'{logoUrl}')}">
+                    <li class="provider_logo">
+                        <!--Provider.html dfgviewer 28-->
+                        <f:link.external uri="{logoUri}" title="{logoTitle}">
+                            <img src="/typo3temp/assets/images/{dc:providerLogoCached(logo:'{logoUrl}')}"
+                                title="{logoTitle}" alt="Logo von {logoTitle}" />
+                        </f:link.external>
+                    </li>
+                </f:if>
+            </f:alias>
+
             <f:comment>aggregatorLogo</f:comment>
             <f:alias map="{logoUrl: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:aggregatorLogo)[1]\')}', 
                 logoTitle: '{dc:xpath(xpath:\'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\"DVRIGHTS\"]/mets:xmlData/dv:rights/dv:aggregator)[1]\')}',

@@ -71,6 +71,18 @@
 }
 
 body {
+    .document-view {
+        .document-functions {
+            .provider {
+                // ein zusätzliches Logo für den fullscreen
+                // normalerweise ausgeblendet
+                .backlink_in_fullscreen {
+                    display: none;
+                }
+            }
+        }
+    }
+
     &.fullscreen {
         .document-view {
             .document-functions {
@@ -83,7 +95,14 @@ body {
 
                     // Original state
                     display: flex;
-                    
+
+                    // ein zusätzliches Logo für den fullscreen
+                    // normalerweise ausgeblendet
+                    .backlink_in_fullscreen {
+                        display: none;
+                    }
+
+
                     ul {
                         li {
                             a {
@@ -91,6 +110,14 @@ body {
                                     background-color: #fff;
                                 }
                             }
+
+                            // Logo Backlink zu Digitale Sammlungen
+                            // und Provider-Logo einblenden
+                            &.backlink_in_fullscreen,
+                            &.provider_logo {
+                                display: inline-block;
+                            }
+
                         }
                     }
 
@@ -98,13 +125,17 @@ body {
 
                 ul.document-function-bar {
                     // Original state
-                    left: 124px;
+                    //left: 124px;
+                    left: 240px;
                 }
 
             }
         }
     }
 }
+
+
+
 
 body.dfgviewer {
     .tx-dlf-pagegrid {
@@ -650,6 +681,7 @@ body.dfgviewer {
     }
 }
 */
+
 
 
 @media screen and (min-width: 1024px) {
