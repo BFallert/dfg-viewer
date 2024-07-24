@@ -54,6 +54,7 @@
                     </li>
                 </f:if>
             </f:for>
+            <f:comment>
             <f:if
                 condition="{dc:xpath(xpath:'(//mets:amdSec/mets:rightsMD/mets:mdWrap[@OTHERMDTYPE=\'DVRIGHTS\']/mets:xmlData/dv:rights/dv:ownerContact)[1]', htmlspecialchars:'FALSE')}">
                 <f:then>
@@ -75,6 +76,7 @@
                     </li>
                 </f:else>
             </f:if>
+            </f:comment>
             <f:cObject typoscriptObjectPath="plugin.tx_dfgviewer_uri" />
         </ul>
     </li>
