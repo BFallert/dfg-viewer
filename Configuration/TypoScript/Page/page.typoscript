@@ -83,6 +83,14 @@ page {
 
       gp-pagegrid = TEXT
       gp-pagegrid.data = GP:tx_dlf|pagegrid
+
+      #temp.backlink = COA
+      gp-back = TEXT
+      gp-back {
+         data = getenv : HTTP_REFERER
+         #data = getIndEnv : HTTP_REFERER
+      }
+      
     }
   }
 }
