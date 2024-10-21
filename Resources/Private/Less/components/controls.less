@@ -146,7 +146,7 @@
                                 content: " ";
                                 background: url(../Images/controlIcons.svg) no-repeat 0 0;
                             }
-
+                            
                             // alte Formen, m�ssen alle in neue Form �berf�hrt werden
                             //&.download-document:before {
                             //    background-position: -360px -40px;
@@ -1136,17 +1136,20 @@
 }
 
 /* ==============[ hide page elements in calendar view ]====================================== */
-//body.dfgviewer.calendar {
-//    .document-functions {
-//        display: none;
-//    }
-//
-//    .view-functions {
-//        display: none;
-//    }
-//
-//    .tx-dfgviewer-newspaper-calendar, .tx-dfgviewer-newspaper-years {
-//        position: relative;
-//        top: -80px;
-//    }
-//}
+body.dfgviewer.calendar {
+    .document-functions {
+        display: none;
+    }
+
+    .view-functions {
+        display: none;
+    }
+
+    /*
+    .tx-dfgviewer-newspaper-calendar, .tx-dfgviewer-newspaper-years {
+        position: relative;
+        top: -80px;
+    }
+    */
+}
+
